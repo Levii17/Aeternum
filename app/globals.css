@@ -1,0 +1,199 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 33% 95%; /* stone-50 */
+    --foreground: 0 0% 11%; /* stone-900 */
+    --border: 30 11% 79%; /* stone-200 */
+    --input: 0 0% 95%;
+    --ring: 30 33% 56%; /* bronze-500 */
+
+    --font-inter: "Inter", system-ui, sans-serif;
+    --font-cinzel: "Cinzel", serif;
+    --font-fira-code: "Fira Code", monospace;
+  }
+
+  .dark {
+    --background: 0 0% 11%; /* stone-900 */
+    --foreground: 40 33% 95%; /* stone-50 */
+    --border: 0 0% 25%; /* stone-700 in dark */
+    --input: 0 0% 15%;
+    --ring: 30 33% 56%; /* bronze-500 */
+  }
+}
+
+@layer base {
+  * {
+    box-sizing: border-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+    font-size: 16px;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans font-light;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  img,
+  video,
+  iframe {
+    max-width: 100%;
+    height: auto;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif font-medium tracking-[0.08em] uppercase leading-tight;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl;
+  }
+
+  h5 {
+    @apply text-lg md:text-xl;
+  }
+
+  h6 {
+    @apply text-base md:text-lg;
+  }
+
+  p {
+    @apply max-w-3xl text-base md:text-lg text-stone-700 dark:text-stone-300 mb-8;
+  }
+
+  .lead {
+    @apply text-lg md:text-xl text-stone-900 dark:text-stone-50 font-light tracking-wide;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply w-full max-w-7xl mx-auto px-4 md:px-8;
+  }
+
+  .section-padding {
+    @apply py-24 md:py-32;
+  }
+
+  .section-title {
+    @apply text-center mb-16 md:mb-24;
+  }
+
+  .roman-number {
+    @apply block text-sm text-bronze-500 font-semibold tracking-[0.1em] mb-4;
+  }
+
+  .btn {
+    @apply inline-flex items-center gap-3 px-12 py-4 bg-transparent text-bronze-500 border border-bronze-500;
+    @apply font-sans font-medium tracking-wider cursor-pointer transition-all duration-300;
+    @apply rounded-sm relative overflow-hidden;
+    /* 'group' cannot be used with @apply. Add 'group' as a class in your HTML/JSX. */
+  }
+
+  .btn::before {
+    @apply content-[''] absolute inset-0 w-full h-full bg-bronze-500 -translate-x-full 
+           transition-transform duration-500 ease-out z-[-1];
+  }
+
+  .btn:hover {
+    @apply text-stone-50;
+  }
+
+  .btn:hover::before {
+    @apply translate-x-0;
+  }
+
+  .btn-primary {
+    @apply bg-bronze-500 text-stone-50 border-bronze-500;
+  }
+
+  .tech-badge {
+    @apply px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-sm text-sm font-mono 
+           text-stone-700 dark:text-stone-300;
+  }
+
+  .glass-morphism {
+    @apply backdrop-blur-md bg-white/10 dark:bg-black/10 border border-white/20 dark:border-white/10;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-bronze-500 to-bronze-300 bg-clip-text text-transparent;
+  }
+
+  .form-label {
+    @apply block text-sm font-medium text-stone-700 dark:text-stone-300 mb-2;
+  }
+
+  .form-input {
+    @apply block w-full px-4 py-3 rounded-md border-stone-300 dark:border-stone-700 bg-white/50 dark:bg-black/50
+           focus:ring-bronze-500 focus:border-bronze-500 transition-colors duration-300;
+  }
+
+  .form-radio {
+    @apply text-bronze-500 focus:ring-bronze-500;
+  }
+
+  .form-error {
+    @apply text-red-500 text-sm mt-1;
+  }
+}
+
+/* Custom scrollbar */
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--ring)) transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--ring));
+    border-radius: 3px;
+  }
+}
