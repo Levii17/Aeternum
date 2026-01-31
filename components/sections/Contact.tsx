@@ -124,10 +124,11 @@ export function Contact() {
         >
           Let&apos;s build something remarkable together. Fill out the form below or email us directly at{' '}
           <a 
-            href="mailto:hello@aeternum.design" 
+            href="mailto:A3ternum@proton.me" 
             className="text-bronze-500 hover:text-bronze-600 transition-colors"
           >
-            hello@aeternum.design
+            A3ternum@proton.me
+            
           </a>
         </motion.p>
       </div>

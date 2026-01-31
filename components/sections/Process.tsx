@@ -103,7 +103,6 @@ export function Process() {
               <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${step.color} flex items-center justify-center`}>
                 <step.icon className="w-8 h-8 text-white" />
               </div>
-              <div className="text-4xl font-bold text-stone-300 dark:text-stone-700 ml-4">{step.number}</div>
             </div>
             
             <div className="ml-4">

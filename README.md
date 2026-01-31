@@ -31,7 +31,6 @@ npm -v
     ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
 ## Running the tests
 
 To run the tests, run the following command:
