@@ -8,7 +8,6 @@ import {
   Twitter, 
   Mail, 
   Phone, 
-  MapPin, 
   ArrowRight,
   Building,
   Code,
@@ -38,7 +37,9 @@ const footerLinks = {
     { name: 'Blog', href: '#' },
     { name: 'Documentation', href: '#' },
     { name: 'Support', href: '#' },
-    { name: 'Privacy Policy', href: '#' },
+    { name: 'Privacy Policy', href: '/privacy-policy' },
+    { name: 'Terms of Service', href: '/terms' },
+    { name: 'Cookie Policy', href: '/cookies' },
   ],
 }
 
@@ -222,7 +223,7 @@ export function Footer() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 py-12 border-y border-stone-800 mb-12"
+          className="grid grid-cols-1 md:grid-cols-2 gap-4 place-items-center py-12 border-y border-stone-800 mb-12"
         >
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-full bg-bronze-500/10 flex items-center justify-center">
@@ -253,18 +254,6 @@ export function Footer() {
               </a>
             </div>
           </div>
-
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-full bg-bronze-500/10 flex items-center justify-center">
-              <MapPin className="w-5 h-5 text-bronze-500" />
-            </div>
-            <div>
-              <h4 className="font-serif mb-1">Location</h4>
-              <p className="text-stone-400">
-                South Africa
-              </p>
-            </div>
-          </div>
         </motion.div>
 
         {/* Bottom Bar */}
@@ -282,7 +271,7 @@ export function Footer() {
 
           <div className="flex items-center gap-6">
             <Link 
-              href="/privacy" 
+              href="/privacy-policy" 
               className="text-sm text-stone-400 hover:text-bronze-500 transition-colors"
             >
               Privacy Policy
