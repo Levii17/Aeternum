@@ -15,8 +15,8 @@ const projects = [
     id: 1,
     title: 'Forno Nero',
     category: 'web',
-    description: 'Enterprise-grade trading platform handling $2B+ in daily transactions with real-time data processing and institutional-level security.',
-    tech: ['React', 'Node.js', 'PostgreSQL', 'AWS', 'WebSocket'],
+    description: 'A modern, visually engaging web application for a restaurant, designed to showcase its philosophy, menu, location, and reservation options.',
+    tech: ['React', 'Vite', 'Tailwind CSS', 'PostCSS', 'Vitest', 'ESLint'],
     gradient: 'from-blue-500/20 to-cyan-500/20',
     liveUrl: '#',
     githubUrl: '#',
@@ -26,18 +26,18 @@ const projects = [
     id: 2,
     title: 'Structura',
     category: 'web',
-    description: 'Immersive cultural heritage platform with 3D exhibits, AR integration, and accessible design serving 500K+ annual visitors.',
-    tech: ['Next.js', 'Three.js', 'TypeScript', 'Vercel'],
+    description: ' a modern, responsive landing page for a digital architecture studio. The site presents the studios philosophy, selected projects, process, design systems capabilities, testimonials, and a contact form.',
+    tech: ['HTML5', 'CSS3', 'JavaScript (ES6)'],
     gradient: 'from-emerald-500/20 to-teal-500/20',
-    liveUrl: '#',
-    githubUrl: '#',
+    liveUrl: 'https://aeternum-art.github.io/Structura/',
+    githubUrl: 'https://github.com/Aeternum-art/Structura',
     imageUrl: structura,
   },
   {
     id: 3,
     title: 'Axis Logistics',
     category: 'web',
-    description: 'Scalable microservices architecture powering international e-commerce operations across 40 countries with multi-currency support.',
+    description: 'A landing page designed in figma for a logisitics company',
     tech: ['Figma'],
     gradient: 'from-purple-500/20 to-pink-500/20',
     liveUrl: '#',
@@ -120,12 +120,12 @@ export function Portfolio() {
             {/* Mobile-first layout: Image on top, content below */}
             <div className="flex flex-col">
               {/* Project Image - Full width on mobile */}
-              <div className="relative w-full aspect-video md:aspect-[16/10] overflow-hidden">
+              <div className="relative w-full aspect-video md:aspect-[16/10] overflow-">
                 <Image 
                   src={project.imageUrl} 
                   alt={project.title} 
                   width={800} 
-                  height={600} 
+                  height={800} 
                   className="object-contain w-full h-full group-hover:scale-105 transition-transform duration-700" 
                 />
                 {/* Gradient overlay for better text readability on mobile */}
